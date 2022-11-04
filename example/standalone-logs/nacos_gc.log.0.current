@@ -1,0 +1,23 @@
+OpenJDK 64-Bit Server VM (25.312-b07) for linux-aarch64 JRE (1.8.0_312-b07), built on Nov 13 2021 08:35:40 by "mockbuild" with gcc 8.5.0 20210514 (Red Hat 8.5.0-4)
+Memory: 4k page, physical 2036672k(84108k free), swap 1048572k(1028188k free)
+CommandLine flags: -XX:GCLogFileSize=104857600 -XX:InitialHeapSize=1073741824 -XX:MaxHeapSize=1073741824 -XX:MaxNewSize=536870912 -XX:NewSize=536870912 -XX:NumberOfGCLogFiles=10 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseGCLogFileRotation -XX:+UseParallelGC 
+2022-11-04T20:02:32.541+0800: 1.580: [GC (Metadata GC Threshold) [PSYoungGen: 385358K->7025K(458752K)] 385358K->7105K(983040K), 0.0097116 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2022-11-04T20:02:32.552+0800: 1.591: [Full GC (Metadata GC Threshold) [PSYoungGen: 7025K->0K(458752K)] [ParOldGen: 80K->6970K(524288K)] 7105K->6970K(983040K), [Metaspace: 20367K->20367K(1069056K)], 0.0226890 secs] [Times: user=0.03 sys=0.01, real=0.02 secs] 
+2022-11-04T20:02:33.247+0800: 2.286: [GC (Allocation Failure) [PSYoungGen: 393216K->12704K(458752K)] 400186K->19682K(983040K), 0.0125480 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2022-11-04T20:02:33.611+0800: 2.650: [GC (Allocation Failure) [PSYoungGen: 405920K->17024K(458752K)] 412898K->24010K(983040K), 0.0089570 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+2022-11-04T20:02:34.279+0800: 3.318: [GC (Allocation Failure) [PSYoungGen: 410240K->17652K(458752K)] 417226K->24646K(983040K), 0.0126002 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2022-11-04T20:02:34.403+0800: 3.442: [GC (Metadata GC Threshold) [PSYoungGen: 52927K->18292K(458752K)] 59922K->25294K(983040K), 0.0094713 secs] [Times: user=0.02 sys=0.00, real=0.01 secs] 
+2022-11-04T20:02:34.414+0800: 3.453: [Full GC (Metadata GC Threshold) [PSYoungGen: 18292K->0K(458752K)] [ParOldGen: 7002K->24123K(524288K)] 25294K->24123K(983040K), [Metaspace: 33599K->33599K(1081344K)], 0.0788374 secs] [Times: user=0.10 sys=0.02, real=0.08 secs] 
+2022-11-04T20:02:36.176+0800: 5.215: [GC (Allocation Failure) [PSYoungGen: 393216K->17746K(499200K)] 417339K->41878K(1023488K), 0.0193096 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+2022-11-04T20:02:36.566+0800: 5.605: [GC (Metadata GC Threshold) [PSYoungGen: 173541K->18712K(494080K)] 197672K->42843K(1018368K), 0.0231055 secs] [Times: user=0.03 sys=0.00, real=0.03 secs] 
+2022-11-04T20:02:36.591+0800: 5.630: [Full GC (Metadata GC Threshold) [PSYoungGen: 18712K->0K(494080K)] [ParOldGen: 24131K->41989K(524288K)] 42843K->41989K(1018368K), [Metaspace: 55946K->55946K(1101824K)], 0.0976619 secs] [Times: user=0.16 sys=0.00, real=0.10 secs] 
+2022-11-04T20:02:37.836+0800: 6.875: [GC (Allocation Failure) [PSYoungGen: 475136K->17199K(499712K)] 517125K->59197K(1024000K), 0.0150821 secs] [Times: user=0.01 sys=0.00, real=0.02 secs] 
+Heap
+ PSYoungGen      total 499712K, used 457841K [0x00000000e0000000, 0x0000000100000000, 0x0000000100000000)
+  eden space 474624K, 92% used [0x00000000e0000000,0x00000000fae507e8,0x00000000fcf80000)
+  from space 25088K, 68% used [0x00000000fe780000,0x00000000ff84bfd0,0x0000000100000000)
+  to   space 24576K, 0% used [0x00000000fcf80000,0x00000000fcf80000,0x00000000fe780000)
+ ParOldGen       total 524288K, used 41997K [0x00000000c0000000, 0x00000000e0000000, 0x00000000e0000000)
+  object space 524288K, 8% used [0x00000000c0000000,0x00000000c2903540,0x00000000e0000000)
+ Metaspace       used 77587K, capacity 82129K, committed 82392K, reserved 1120256K
+  class space    used 9645K, capacity 10889K, committed 11008K, reserved 1048576K
