@@ -6,6 +6,8 @@ Dockerfile 和 example文件夹中的文件都已经修改过，运行前请先�
 
 Dockerfile文件 更改了centos版本来支持M系列芯片 centos:8.3.2011
 
+另外Fleet狠狠的坑了我 一把 可能docker-compose文件有问题 目前derby的是正常的
+
 
 # Nacos Docker
 
