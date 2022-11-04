@@ -1,7 +1,7 @@
 version: "2"
 services:
   nacos:
-      image: southcat996/nacos-m:${NACOS_VERSION}
+    image: southcat996/nacos-m:${NACOS_VERSION}
     container_name: nacos-standalone
     environment:
       - PREFER_HOST_MODE=hostname
