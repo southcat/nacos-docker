@@ -3,7 +3,7 @@ services:
   nacos1:
     hostname: nacos1
     container_name: nacos1
-    image: nacos/nacos-server:${NACOS_VERSION}
+    image: southcat996/nacos-m:${NACOS_VERSION}
     volumes:
       - ./cluster-logs/nacos1:/home/nacos/logs
     ports:
@@ -19,7 +19,7 @@ services:
 
   nacos2:
     hostname: nacos2
-    image: nacos/nacos-server:${NACOS_VERSION}
+    image: southcat996/nacos-m:${NACOS_VERSION}
     container_name: nacos2
     volumes:
       - ./cluster-logs/nacos2:/home/nacos/logs
@@ -34,7 +34,7 @@ services:
         condition: service_healthy
   nacos3:
     hostname: nacos3
-    image: nacos/nacos-server:${NACOS_VERSION}
+    image: southcat996/nacos-m:${NACOS_VERSION}
     container_name: nacos3
     volumes:
       - ./cluster-logs/nacos3:/home/nacos/logs

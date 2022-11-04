@@ -1,5 +1,5 @@
-FROM centos:7.9.2009
-MAINTAINER pader "huangmnlove@163.com"
+FROM centos:8.3.2011
+MAINTAINER pader "admin@southcat.net"
 
 # set environment
 ENV MODE="cluster" \
@@ -20,18 +20,22 @@ ENV MODE="cluster" \
     TOMCAT_ACCESSLOG_ENABLED="false" \
     TIME_ZONE="Asia/Shanghai"
 
-ARG NACOS_VERSION=2.1.1
+ARG NACOS_VERSION=2.1.2
 ARG HOT_FIX_FLAG=""
 
 WORKDIR $BASE_DIR
+RUN sed -i -e "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*
+RUN sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
 
 RUN set -x \
+    && yum clean all \
+    && yum makecache \
     && yum update -y \
-    && yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel wget iputils nc  vim libcurl
-RUN wget  https://github.com/alibaba/nacos/releases/download/${NACOS_VERSION}${HOT_FIX_FLAG}/nacos-server-${NACOS_VERSION}.tar.gz -P /home
-RUN tar -xzvf /home/nacos-server-${NACOS_VERSION}.tar.gz -C /home \
+    && yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel wget iputils nc  vim libcurl --allowerasing
+    RUN wget  https://github.com/alibaba/nacos/releases/download/${NACOS_VERSION}${HOT_FIX_FLAG}/nacos-server-${NACOS_VERSION}.tar.gz -P /home
+    RUN tar -xzvf /home/nacos-server-${NACOS_VERSION}.tar.gz -C /home \
     && rm -rf /home/nacos-server-${NACOS_VERSION}.tar.gz /home/nacos/bin/* /home/nacos/conf/*.properties /home/nacos/conf/*.example /home/nacos/conf/nacos-mysql.sql
-RUN yum autoremove -y wget \
+    RUN yum autoremove -y wget \
     && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone \
     && yum clean all
 
@@ -44,10 +48,10 @@ ADD conf/application.properties conf/application.properties
 
 # set startup log dir
 RUN mkdir -p logs \
-	&& cd logs \
-	&& touch start.out \
-	&& ln -sf /dev/stdout start.out \
-	&& ln -sf /dev/stderr start.out
+&& cd logs \
+&& touch start.out \
+&& ln -sf /dev/stdout start.out \
+&& ln -sf /dev/stderr start.out
 RUN chmod +x bin/docker-startup.sh
 
 EXPOSE 8848
